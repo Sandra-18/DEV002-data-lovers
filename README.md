@@ -460,7 +460,7 @@ correspondiente.
 Por ejemplo, si "descomentamos" la siguiente línea:
 
 ```js
-// import data from './data/lol/lol.js';
+// import data from './data/lol/lol.js';     '.data/Harrypotter/harry.js';
 ```
 
 La línea quedaría así:

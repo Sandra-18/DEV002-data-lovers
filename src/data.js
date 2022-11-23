@@ -1,9 +1,11 @@
 // estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
+export const personajes = (characters) => {
+  const PersonajesFiltrados = characters.filter(filtrados => filtrados.species === "Human");
+  return PersonajesFiltrados;
 };
 
-export const anotherExample = () => {
-  return 'OMG';
+export const ids = (characters) => {
+  const almacenIds = characters.filter(identidad => typeof identidad.id ===  "number")
+  return almacenIds;
 };
