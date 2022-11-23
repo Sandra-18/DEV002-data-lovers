@@ -31,7 +31,6 @@
 .sTituloPrincipal h1{
     font-size: 7vw;
     color: gold;
-
 }
 /*--------------CSS Header---------------------*/
 .sTamaño{
@@ -57,4 +56,48 @@
 .sHechizos{
     width: 20%;
     height: 30vh;
+}
+/*-------------------HEAD--------------*/
+.sHechizos img{
+    width: 87%;
+    height: 34vh;
+}
+.sHechizos p{
+    color: goldenrod;
+}
+/*------------------css primera parte main--------------*/
+.mLibrosCasasHechizos{
+    width: 100%;
+    height: 40vh
+}
+.mHijoLibroCasasHechizos{
+    width: 100%;
+    height: 41vh;
+    display: flex;
+    justify-content: space-around;
+}
+.mLibros img{
+    width: 87%;
+    height: 34vh;
+}
+.mLibros p{
+    color: goldenrod;
+}
+.mCasas{
+    width: 20%;
+    height: 30vh;
+}
+.mCasas img{
+    width: 87%;
+    height: 34vh;
+}
+.mCasas p{
+    color: goldenrod;
+}
+.mHechizos img{
+    width: 87%;
+    height: 34vh
+    }
+.mHechizos p{
+    color:goldenrod
 }
