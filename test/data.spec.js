@@ -14,15 +14,15 @@ describe('filtro de caracteristicas', () => {
   it('devuelve identificacion', () => {
     expect(ids(characters).length).toBe(707);
   });
-// });
+});
 
 
-// describe('anotherExample', () => {
-//   it('is a function', () => {
-//     expect(typeof anotherExample).toBe('function');
-//   });
+describe('anotherExample', () => {
+  it('is a function', () => {
+    expect(typeof anotherExample).toBe('function');
+  });
 
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
+  it('returns `anotherExample`', () => {
+    expect(anotherExample()).toBe('OMG');
+  });
 });
