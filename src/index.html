@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 
 <head>
   <meta charset="utf-8">
@@ -16,8 +17,8 @@
           <img src="img/logoHogwarst.png" alt="logoDeHogwarst">
         </div>
         <div class="sTituloPrincipal">
-          <h1>
-            HARRY POTTER
+          <h1 class="HarryP">
+            Hogwarst School
           </h1>
         </div>
         <div class="sLogoIzquierdo">
@@ -25,42 +26,65 @@
         </div>
       </section>
     </header>
-    <main class="sTamaño">
-      <section class="sMagosHechizos">
-        <div class="sHijoMagosHechizos">
-          <div class="sMago">
-            <img src="img/personajes.png" alt="">
-            <input type="submit" class="sBtnPersonajes" id="sBtnPersonajes" value="Personajes">
-          </div>
-          <div class="sHechizos">
-            <img src="img/posiones.png" alt="posiones">
-            <p>Posiones</p>
 
-          </div>
-        </div>
-      </section>
-      <section class="mLibrosCasasHechizos">
-        <div class="mHijoLibroCasasHechizos">
-          <div class="mLibros">
+
+
+    <nav class="menu-navegacion">
+        <a href="#sLibrosMain"><input type="submit" class="sBtnPersonajesNav" id="sBtnLibrosNav" value="Libros"></a> 
+        <a href="#sPersonajesMain"><input type="submit" class="sBtnPersonajesNav" id="sBtnPersonajessNav" value="Personajes"></a> 
+        <a href="#sHechizosMain"><input type="submit" class="sBtnPersonajesNav" id="sBtnHechizosNav" value="Hechizos"></a> 
+        <a href="#sPosionesMain"><input type="submit" class="sBtnPersonajesNav" id="sBtnPosionesNav" value="Posiones"></a> 
+    </nav>
+
+
+
+
+    <main id="sSize" class="sSize">
+        
+      <section class="sMagosHechizos" id="sMagosHechizos">
+        <div class="sHijoMagosHechizos">
+
+          <div class="mLibros scontenedoresMain">
             <img src="img/libros.png" alt="Libros">
-          <p>Libros</p>
+            <input type="submit" class="sBtnPersonajes HarryP" id="sBtnLibros" value="Libros">
           </div>
-          <div class="mCasas">
-            <img src="img/casas.jpg" alt="casas">
-            <p>Casas</p>
+
+          <div class="sMago scontenedoresMain">
+            <img src="img/personajes.png" alt="Personajes">
+            <input type="submit" class="sBtnPersonajes  HarryP" id="sBtnPersonajes" value="Personajes">
           </div>
-          <div class="mHechizos">
+
+          <div class="mHechizos scontenedoresMain">
             <img src="img/hechizos.png" alt="Hechizos">
-            <p>Hechizos</p>
+            <input type="submit" class="sBtnPersonajes  HarryP" id="sBtnHechizos" value="Hechizos">
+          </div>
+
+
+          <div class="sHechizos scontenedoresMain">
+            <img src="img/posiones.png" alt="posiones">
+            <input type="submit" class="sBtnPersonajes  HarryP" id="sBtnPosiones" value="Posiones">
           </div>
         </div>
       </section>
+
+      <section class="sLibrosMain" id="sLibrosMain">
+      </section>
+
+
+      <section class="sPersonajesMain" id="sPersonajesMain">
+      </section>
+
+
+      <section class="sHechizosMain" id="sHechizosMain">
+      </section>
+
+
+      <section class="sPosionesMain" id="sPosionesMain">
+      </section>
+
+
     </main>
   </div>
-
-
-
   <script src="main.js" type="module"></script>
 </body>
-
 </html>

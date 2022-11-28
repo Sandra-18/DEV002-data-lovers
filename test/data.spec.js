@@ -1,8 +1,28 @@
-import {personajes,ids} from '../src/data.js';
+import {
+  personajes,
+  ids,
+  _author,
+  order_AZ,
+  order_ZA
+} from '../src/data.js';
 import data from "../src/data/harrypotter/data.js";
-const characters = data.characters;
+const characters = data.characters,
+      books = data.books;
 
-describe('filtro de caracteristicas', () => {
+//filtar todos los personajes
+describe("validacion de los iDs de characters", () =>{
+  it("una funcion", () =>{
+    expect(typeof ids).toBe("function")
+  });
+
+  it("la Longitud de iDs de Characters", () =>{
+    expect(ids(characters).length).toBe(707);
+  });
+});
+
+
+//filtramos todos los humanos
+describe('filtro de Humanos', () => {
   it("is a function", () => {
     expect(typeof personajes).toBe("function");
   });
@@ -11,17 +31,94 @@ describe('filtro de caracteristicas', () => {
     expect(personajes(characters).length).toBe(589);
   });
 
-  it('devuelve identificacion', () => {
-    expect(ids(characters).length).toBe(707);
+});
+
+
+describe('anotherExample', () => {
+  it('is a function', () => {
+    expect(typeof anotherExample).toBe('function');
+  });
+
+  it('returns `anotherExample`', () => {
+    expect(anotherExample()).toBe('OMG');
   });
 });
 
 
-//describe('anotherExample', () => {
- // it('is a function', () => {
-   // expect(typeof anotherExample).toBe('function');
-//  });
 
-  it('returns `anotherExample`', () => {
-  expect(anotherExample()).toBe('OMG');
-});
+
+
+
+
+
+
+
+
+//filtarr los hechizos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
