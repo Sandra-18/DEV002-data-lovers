@@ -9,7 +9,7 @@ import data from "../src/data/harrypotter/data.js";
 const characters = data.characters,
       books = data.books;
 
-//filtar todos los personajes
+//filtar todos los personajes por iDs
 describe("validacion de los iDs de characters", () =>{
   it("una funcion", () =>{
     expect(typeof ids).toBe("function")
@@ -66,16 +66,6 @@ describe('Orden Alfabetico Reverse', () =>{
     expect(order_ZA(characters)).toBe(characters)
   });
 });
-
-
-
-
-
-
-
-
-
-
 
 //filtarr los hechizos
 

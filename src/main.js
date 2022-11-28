@@ -1,18 +1,22 @@
 import data from "./data/harrypotter/data.js";
-import {personajes,_author,order_AZ} from './data.js';
+import {personajes,
+        _author,
+        order_AZ} 
+from './data.js';
+
 let characters = data.characters;
 let Books = data.books;
-//almacenamos la Data de lo que vemos en pantalla
+//almacenamos la Data de lo que vamos a ver en pantalla
 let person_param = personajes(characters);
 let books_param = _author(Books);
 let AZ_param = order_AZ(characters);
-//seleccionamos etiquetas del DOM
+//seleccionamos etiquetas las secciones del DOM
 let sTamano_acceso = document.querySelector("#root #sSize");
 let sLibrosMain_Acceso = document.querySelector("#sLibrosMain");
 let sPersonajesMain_Acceso = document.querySelector("#sPersonajesMain");
 let sHechizosMain_acceso = document.querySelector("#sHechizosMain");
 let sPosionesMain_acceso = document.querySelector("#sPosionesMain");
-//capturamos los botones
+//capturamos los botones de la pagina principal
 let sBtnCaptura_Libros = document.querySelector("#sBtnLibros");
 let sBtnCaptura_Personajes = document.querySelector("#sBtnPersonajes");
 let sBtnCaptura_Hechizos = document.querySelector("#sBtnHechizos");
@@ -39,7 +43,9 @@ sBtnCaptura_Posiones.addEventListener("click",() => {
     document.querySelector(".menu-navegacion").style.display = "block"
 });
 
-// const person
+const person = () => {
+    
+}
 
 
 
