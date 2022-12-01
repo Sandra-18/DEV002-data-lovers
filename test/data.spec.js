@@ -16,7 +16,7 @@ describe("validacion de los iDs de characters", () =>{
   });
 
   it("la Longitud de iDs de Characters", () =>{
-    expect(ids(characters).length).toBe(707);
+    expect(ids(characters).length).toEqual(707);
   });
 });
 
@@ -28,7 +28,7 @@ describe('filtro de Humanos', () => {
   });
 
   it('devuelve humanos', () => {
-    expect(personajes(characters).length).toBe(589);
+    expect(personajes(characters).length).toEqual(589);
   });
 
 });
@@ -41,7 +41,7 @@ describe('libros', () => {
   });
 
   it('Devuelve Libros', () => {
-    expect(_author(books).length).toBe(8);
+    expect(_author(books).length).toEqual(8);
   });
 });
 
@@ -53,7 +53,7 @@ describe('Orden Alfabetico', () =>{
   });
 
   it('Return A_Z', () =>{
-    expect(order_AZ(characters)).toBe(characters)
+    expect(order_AZ(characters)).toEqual(characters)
   });
 });
 
@@ -63,7 +63,7 @@ describe('Orden Alfabetico Reverse', () =>{
   });
 
   it('Return Z_A', () =>{
-    expect(order_ZA(characters)).toBe(characters)
+    expect(order_ZA(characters)).toEqual(characters)
   });
 });
 
