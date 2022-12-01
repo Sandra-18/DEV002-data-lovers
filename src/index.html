@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
   <meta charset="utf-8">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="#">
 </head>
-
 <body>
   <div id="root" class="sFondo">
     <header>
@@ -26,21 +23,14 @@
         </div>
       </section>
     </header>
-
-
-
-    <nav class="menu-navegacion">
-        <a href="#sLibrosMain"><input type="submit" class="sBtnPersonajesNav" id="sBtnLibrosNav" value="Libros"></a> 
-        <a href="#sPersonajesMain"><input type="submit" class="sBtnPersonajesNav" id="sBtnPersonajessNav" value="Personajes"></a> 
-        <a href="#sHechizosMain"><input type="submit" class="sBtnPersonajesNav" id="sBtnHechizosNav" value="Hechizos"></a> 
-        <a href="#sPosionesMain"><input type="submit" class="sBtnPersonajesNav" id="sBtnPosionesNav" value="Posiones"></a> 
+    <nav class="menu-navegacion" id="menu-navegacion">
+        <input type="submit" class="sBtnPersonajesNav" id="sBtnLibrosNav" value="Libros">
+        <input type="submit" class="sBtnPersonajesNav" id="sBtnPersonajessNav" value="Personajes">
+        <input type="submit" class="sBtnPersonajesNav" id="sBtnHechizosNav" value="Hechizos">
+        <input type="submit" class="sBtnPersonajesNav" id="sBtnPosionesNav" value="Posiones">
+        <input type="submit" class="sBtnPersonajesNav" id="sBtnMenuPrincipalNav" value="Volver al menu Principal">
     </nav>
-
-
-
-
     <main id="sSize" class="sSize">
-        
       <section class="sMagosHechizos" id="sMagosHechizos">
         <div class="sHijoMagosHechizos">
 
@@ -66,23 +56,22 @@
           </div>
         </div>
       </section>
-
       <section class="sLibrosMain" id="sLibrosMain">
+        <div class="sSizeLibros">
+        </div>
       </section>
-
-
       <section class="sPersonajesMain" id="sPersonajesMain">
+          <div class="sSizePersonajes">
+          </div>
       </section>
-
-
       <section class="sHechizosMain" id="sHechizosMain">
+        <div class="sSizeHechizos">
+        </div>
       </section>
-
-
       <section class="sPosionesMain" id="sPosionesMain">
+        <div class="sSizePosiones">
+        </div>
       </section>
-
-
     </main>
   </div>
   <script src="main.js" type="module"></script>
