@@ -5,9 +5,9 @@ export const personajes = (characters) => {
   const PersonajesFiltrados = characters.filter(filtrados => filtrados.species === "Human");
   return PersonajesFiltrados;
 };
-export const ids = (characters) => {
-  const almacenIds = characters.filter(identidad => typeof identidad.id ===  "number")
-  return almacenIds;
+export const personajes_No_Humanos = (characters) => {
+  const PersonajesFiltrados = characters.filter(filtrados => filtrados.species !== "Human");
+  return PersonajesFiltrados;
 };
 
 //filtramos por orden alfabetico
@@ -32,6 +32,6 @@ export const pureSpecies  = (characters) =>{
 //filtramos los libros
 export const _author = (books) => {
   const almacenAutor = books.filter(autor => typeof autor.id === "number" )
-return almacenAutor;
+  return almacenAutor;
 };
 

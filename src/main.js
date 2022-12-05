@@ -1,12 +1,18 @@
 import data from "./data/harrypotter/data.js";
-import {personajes,
-        ids
-        } 
-from './data.js';
-let characters = data.characters;
-//almacenamos la Data de lo que vamos a ver en pantalla
-let person_param = personajes(characters);
-let ids_param = ids(characters);
+import {
+     personajes,
+     personajes_No_Humanos,
+     order_AZ,
+     order_ZA,
+     pureSpecies,
+     dirtyBlood,
+     _author
+     
+} from './data.js';
+
+const characters = data.characters;
+const Libros = data.books;
+
 //seleccionamos las secciones del DOM
 const sMain_acceso = document.querySelector("#sMagosHechizos"),
       sLibrosMain_Acceso = document.querySelector("#sLibrosMain"),
@@ -14,10 +20,13 @@ const sMain_acceso = document.querySelector("#sMagosHechizos"),
       sHechizosMain_acceso = document.querySelector("#sHechizosMain"),
       sPosionesMain_acceso = document.querySelector("#sPosionesMain"),    
       nav_acesso = document.querySelector("#menu-navegacion");
+//seleccionamos el select
+const selecteFilter = document.querySelector("#filtroId");
 //DIV contenedores de tarjetas
-const sContainerSectionPersonajes = document.querySelector(".sSizePersonajes");
-      
-      
+const sContainerSectionPersonajes = document.querySelector(".sSizePersonajes"),
+      sContainerSectionLibros = document.querySelector(".sSizeLibros"),
+      sContainerSectionHechizos = document.querySelector(".sSizeHechizos"),
+      sContainerSectionPosiones = document.querySelector(".sSizePosiones")
 //capturamos los botones de la pagina principal
 const sBtnCaptura_Libros = document.querySelector("#sBtnLibros"),
       sBtnCaptura_Personajes = document.querySelector("#sBtnPersonajes"),
@@ -88,28 +97,157 @@ sBtnCaptura_Posiones.addEventListener("click", () => {
     sMain_acceso.classList.add("sMainPrincipal");
 });
 
-const person = (human_New_param) => {
-    human_New_param = person_param;
-    for(let iteracion = 0; iteracion < human_New_param.length; iteracion++){
-        if(iteracion === 102){
-            break;
-        }
-        let personajes_ya_iterados = human_New_param[iteracion];
-        let creacionDiv = document.createElement("div"),
-            creacionFigure = document.createElement("figure"),
-            creacionH2 = document.createElement("h2");
-            creacionDiv.classList.add("tarjetasPersonajes")
-            creacionH2.classList.add("HarryP")
-            creacionFigure.innerHTML = `<img src="img/profile.png">`;
+const tarjetasDePersonajes = (tarjeta) => {
+    let almacenTarjetas = [];
+    
+    tarjeta.forEach(elemt => {
+    let creacionDiv = document.createElement("div");
+    creacionDiv.classList.add("tarjetasPersonajes")
+    let creacionFigure = document.createElement("figure")
+    creacionFigure.innerHTML = `<img src="img/profile.png">`;
 
+    const nombres = document.createElement("h2");
+        nombres.classList.add("HarryP");
+        nombres.textContent = elemt.name;
         sPersonajesMain_Acceso.appendChild(sContainerSectionPersonajes);
         sContainerSectionPersonajes.appendChild(creacionDiv);
         creacionDiv.appendChild(creacionFigure);
-        creacionDiv.appendChild(creacionH2);
-        creacionH2.textContent = `${personajes_ya_iterados.name}`;
-    }
+        creacionDiv.appendChild(nombres);
+        almacenTarjetas.push(creacionDiv); 
+    }) 
+    return almacenTarjetas;
 }
-person();
+const allCharacters = () => {
+        
+    characters.forEach(elemt => {
+    let creacionDiv = document.createElement("div");
+    creacionDiv.classList.add("tarjetasPersonajes")
+    let creacionFigure = document.createElement("figure");
+    creacionFigure.innerHTML = `<img src="img/profile.png">`;
+
+    const nombres = document.createElement("h2");
+        nombres.classList.add("HarryP")
+        nombres.textContent = elemt.name;
+        sPersonajesMain_Acceso.appendChild(sContainerSectionPersonajes);
+        sContainerSectionPersonajes.appendChild(creacionDiv);
+        creacionDiv.appendChild(creacionFigure);
+        creacionDiv.appendChild(nombres)
+    }) 
+}
+allCharacters();
+//Se imprimen en orden alfabetico
+selecteFilter.addEventListener("change", () => {
+    if(selecteFilter.value === "a_z"){
+        sContainerSectionPersonajes.innerHTML = " ";
+        const nombres_Ordenados = order_AZ(characters);
+        const tarjetaOrdenada = tarjetasDePersonajes(nombres_Ordenados);
+        tarjetaOrdenada.forEach(iterador => {
+            sContainerSectionPersonajes.appendChild(iterador)
+        });
+    }
+})
+selecteFilter.addEventListener("change", () => {
+    if(selecteFilter.value === "z_a"){
+        sContainerSectionPersonajes.innerHTML = " ";
+        const nombres_Ordenados_Reversa = order_ZA(characters);
+        const tarjeta_Ordenada_Reversa = tarjetasDePersonajes(nombres_Ordenados_Reversa);
+        tarjeta_Ordenada_Reversa.forEach(iterador => {
+            sContainerSectionPersonajes.appendChild(iterador);
+        });
+    }
+})
+//Se imprimen Humanos
+selecteFilter.addEventListener("change", ()  => {
+    if(selecteFilter.value === "Humans"){
+        sContainerSectionPersonajes.innerHTML = " ";
+        const humanos = personajes(characters)
+        const tarjeta_Humanos = tarjetasDePersonajes(humanos);
+        tarjeta_Humanos.forEach(iterador => {
+            sContainerSectionPersonajes.appendChild(iterador);
+            sContainerSectionPersonajes.classList.add("grid_Humanos");
+            sContainerSectionPersonajes.classList.remove("grid_No_Humanos");
+            sContainerSectionPersonajes.classList.remove("grid_Puros");
+        sContainerSectionPersonajes.classList.remove("grid_Impuros");
+        })
+    }
+})
+//Se imprimen no Humanos
+selecteFilter.addEventListener("change", () => {
+    if(selecteFilter.value === "Not_Humans"){
+        sContainerSectionPersonajes.innerHTML = " ";
+        const no_humanos = personajes_No_Humanos(characters);
+        const tarjeta_No_Humanos =  tarjetasDePersonajes(no_humanos);
+            tarjeta_No_Humanos.forEach(iterador => {
+                sContainerSectionPersonajes.appendChild(iterador)
+                sContainerSectionPersonajes.classList.add("grid_No_Humanos");
+                sContainerSectionPersonajes.classList.remove("grid_Humanos");
+                sContainerSectionPersonajes.classList.remove("grid_Puros");
+                sContainerSectionPersonajes.classList.remove("grid_Impuros");
+            })
+    }
+})
+//Se filtro sandgre pura sin utilizar el forEach ;)
+selecteFilter.addEventListener("change", () => {
+    if(selecteFilter.value === "sangre_Pura"){
+        sContainerSectionPersonajes.innerHTML = " ";
+        const personajes_Puros = pureSpecies(characters);
+        tarjetasDePersonajes(personajes_Puros);
+        sContainerSectionPersonajes.classList.add("grid_Puros");
+        sContainerSectionPersonajes.classList.remove("grid_Impuros");
+        sContainerSectionPersonajes.classList.remove("grid_No_Humanos");
+        sContainerSectionPersonajes.classList.remove("grid_Humanos");
+    }
+})
+selecteFilter.addEventListener("change", () => {
+    if(selecteFilter.value === "sangre_Impura"){
+        sContainerSectionPersonajes.innerHTML = " ";
+        const personajes_Impuros = dirtyBlood(characters);
+        tarjetasDePersonajes(personajes_Impuros);
+        sContainerSectionPersonajes.classList.add("grid_Impuros");
+        sContainerSectionPersonajes.classList.remove("grid_Puros");
+        sContainerSectionPersonajes.classList.remove("grid_No_Humanos");
+        sContainerSectionPersonajes.classList.remove("grid_Humanos");
+    }
+})
+//Se vuelven a imprimir todos
+selecteFilter.addEventListener("change", () => {
+    if(selecteFilter.value === "alls"){
+        sContainerSectionPersonajes.innerHTML = " ";
+        sContainerSectionPersonajes.classList.remove("grid_No_Humanos");
+        sContainerSectionPersonajes.classList.remove("grid_Humanos");
+        sContainerSectionPersonajes.classList.remove("grid_Impuros");
+        sContainerSectionPersonajes.classList.remove("grid_Puros");
+        allCharacters();
+    }
+})
+
+//Portada de libros
+const portada_Libros = () => {
+    Libros.map((elemt) =>{
+    let creacionDiv = document.createElement("div"),
+    creacionH2 = document.createElement("h2"),
+    creacionH3 = document.createElement("h3"),
+    creacionH3Autor = document.createElement("h3"),
+    creacionP = document.createElement("p"); 
+    
+    creacionDiv.classList.add("sContainerLibrosJS");
+
+    sContainerSectionLibros.appendChild(creacionDiv);
+
+    creacionDiv.appendChild(creacionH2);
+    creacionDiv.appendChild(creacionH3);
+    creacionDiv.appendChild(creacionH3Autor);
+    creacionDiv.appendChild(creacionP);
+
+    creacionH2.textContent = elemt.title;
+    creacionH3.textContent = elemt.releaseDay;
+    creacionH3Autor.textContent = elemt.author;
+    creacionP.textContent = elemt.description;
+
+
+    })
+}
+portada_Libros();
 
 
 
@@ -122,6 +260,13 @@ person();
 
 
 
- 
+
+
+
+
+
+
+
+
 
 

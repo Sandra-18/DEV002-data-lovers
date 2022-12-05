@@ -1,25 +1,15 @@
 import {
   personajes,
-  ids,
+  personajes_No_Humanos,
   _author,
   order_AZ,
-  order_ZA
+  order_ZA,
+  dirtyBlood,
+  pureSpecies
 } from '../src/data.js';
 import data from "../src/data/harrypotter/data.js";
 const characters = data.characters,
       books = data.books;
-
-//filtar todos los personajes por iDs
-describe("validacion de los iDs de characters", () =>{
-  it("una funcion", () =>{
-    expect(typeof ids).toBe("function")
-  });
-
-  it("la Longitud de iDs de Characters", () =>{
-    expect(ids(characters).length).toEqual(707);
-  });
-});
-
 
 //filtramos todos los humanos
 describe('filtro de Humanos', () => {
@@ -32,8 +22,17 @@ describe('filtro de Humanos', () => {
   });
 
 });
+//Filtramos No Humanos
+describe('filtro de no Humanos', () => {
+  it("is a function", () => {
+    expect(typeof personajes_No_Humanos).toBe("function");
+  });
 
+  it('devuelve no humanos', () => {
+    expect(personajes_No_Humanos(characters).length).toEqual(118);
+  });
 
+});
 //filtar los libros por iDs
 describe('libros', () => {
   it('is a function', () => {
@@ -44,19 +43,15 @@ describe('libros', () => {
     expect(_author(books).length).toEqual(8);
   });
 });
-
-
-//filtar por orden Alfabetico y su reversa
+//filtrar por orden Alfabetico y su reversa
 describe('Orden Alfabetico', () =>{
   it('is a function', () =>{
     expect(typeof order_AZ).toBe("function")
   });
-
   it('Return A_Z', () =>{
     expect(order_AZ(characters)).toEqual(characters)
   });
 });
-
 describe('Orden Alfabetico Reverse', () =>{
   it('is a function', () =>{
     expect(typeof order_ZA).toBe("function")
@@ -66,8 +61,26 @@ describe('Orden Alfabetico Reverse', () =>{
     expect(order_ZA(characters)).toEqual(characters)
   });
 });
+//Filtrar sangre pura e impura
+describe('Personajes de sangre pura', () =>{
+  it('is a function', () =>{
+    expect(typeof pureSpecies).toBe("function")
+  });
+  it('personajes puros', () =>{
+    expect(pureSpecies(characters).length).toEqual(69)
+  });
+});
+describe('Personajes de sangre impura', () =>{
+  it('is a function', () =>{
+    expect(typeof dirtyBlood).toBe("function")
+  });
+  it('Personajes Impuros', () =>{
+    expect(dirtyBlood(characters).length).toEqual(72)
+  });
+});
 
-//filtarr los hechizos
+
+//filtrar los hechizos
 
 
 

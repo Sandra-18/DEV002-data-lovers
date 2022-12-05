@@ -33,23 +33,18 @@
     <main id="sSize" class="sSize">
       <section class="sMagosHechizos" id="sMagosHechizos">
         <div class="sHijoMagosHechizos">
-
           <div class="mLibros scontenedoresMain">
             <img src="img/libros.png" alt="Libros">
             <input type="submit" class="sBtnPersonajes HarryP" id="sBtnLibros" value="Libros">
           </div>
-
           <div class="sMago scontenedoresMain">
             <img src="img/personajes.png" alt="Personajes">
             <input type="submit" class="sBtnPersonajes  HarryP" id="sBtnPersonajes" value="Personajes">
           </div>
-
           <div class="mHechizos scontenedoresMain">
             <img src="img/hechizos.png" alt="Hechizos">
             <input type="submit" class="sBtnPersonajes  HarryP" id="sBtnHechizos" value="Hechizos">
           </div>
-
-
           <div class="sHechizos scontenedoresMain">
             <img src="img/posiones.png" alt="posiones">
             <input type="submit" class="sBtnPersonajes  HarryP" id="sBtnPosiones" value="Posiones">
@@ -61,6 +56,15 @@
         </div>
       </section>
       <section class="sPersonajesMain" id="sPersonajesMain">
+        <select name="filtro" id="filtroId">
+          <option selected value="alls">All</option>
+          <option value="a_z">A - Z</option>
+          <option value="z_a">Z - A</option>
+          <option value="Humans">Humans</option>
+          <option value="Not_Humans">Not Humans</option>
+          <option value="sangre_Pura">Pure Blood</option>
+          <option value="sangre_Impura">Half Blood</option>
+        </select>
           <div class="sSizePersonajes">
           </div>
       </section>
