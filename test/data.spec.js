@@ -32,7 +32,6 @@ describe('filtro de no Humanos', () => {
     expect(personajes_No_Humanos(characters).length).toEqual(118);
   });
 
-<<<<<<< HEAD
 });
 //filtar los libros por iDs
 describe('libros', () => {
@@ -82,9 +81,6 @@ describe('Personajes de sangre impura', () =>{
 
 
 //filtrar los hechizos
-=======
-
->>>>>>> 08ded8c9ec667b1e6d8c056915111878cd596316
 
 
 
