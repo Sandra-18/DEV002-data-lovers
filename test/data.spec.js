@@ -5,11 +5,16 @@ import {
   order_AZ,
   order_ZA,
   dirtyBlood,
-  pureSpecies
+  pureSpecies,
+  informacionPotions,
+  informacionHechizos
+
 } from '../src/data.js';
 import data from "../src/data/harrypotter/data.js";
 const characters = data.characters,
-      books = data.books;
+      books = data.books,
+      potions = data.potions,
+      spells = data.spells;
 
 //filtramos todos los humanos
 describe('filtro de Humanos', () => {
@@ -79,9 +84,27 @@ describe('Personajes de sangre impura', () =>{
   });
 });
 
+//filtrar los hechizos 
+ describe("filtrar Hehizos",()=>{
+  it("informacion debe cumplir con ser una funcion",()=>{
+    expect(typeof informacionHechizos).toBe("function");
+  });
+  it("filtra 305 hechizos",()=>{
+    expect(informacionHechizos(spells).length).toEqual(305)
+  });
+ });
 
-//filtrar los hechizos
 
+//filtrar las pociones 
+describe('Filtrar las Pociones', () => {
+  it('informacionPotions is a function', () => {
+    expect(typeof informacionPotions).toBe("function");
+  });
+
+  it('Devuelve Pociones', () => {
+    expect(informacionPotions(potions).length).toEqual(150);
+  });
+});
 
 
 

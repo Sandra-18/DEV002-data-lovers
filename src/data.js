@@ -34,4 +34,15 @@ export const _author = (books) => {
   const almacenAutor = books.filter(autor => typeof autor.id === "number" )
   return almacenAutor;
 };
+//filtrados las pociones
+export const informacionPotions= (potions)=> {
+    const almacenPociones = potions.filter(idPociones => typeof idPociones.id ==="number")
+    return almacenPociones;
 
+      }
+
+//filtrados de hechizos
+ export const informacionHechizos= (spells)=>{
+  const almacenHechizos = spells.filter(idHechizos => typeof idHechizos.id === "number" )
+  return almacenHechizos;
+ }

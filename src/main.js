@@ -6,12 +6,16 @@ import {
      order_ZA,
      pureSpecies,
      dirtyBlood,
-     _author
+    
+     
+
      
 } from './data.js';
 
 const characters = data.characters;
 const Libros = data.books;
+const Potions = data.potions;
+const spells = data.spells;
 
 //seleccionamos las secciones del DOM
 const sMain_acceso = document.querySelector("#sMagosHechizos"),
@@ -249,11 +253,42 @@ const portada_Libros = () => {
 }
 portada_Libros();
 
+//portada hechizos
+ const idHechizos = () =>{
+spells.map((hechizos)=>{
+ let creacionDiv=document.createElement("div")
+ creacionDiv.classList.add("mContenedorHechizos")
+ let creacionFigure=document.createElement("figure")
+ creacionFigure.innerHTML= `<img src="img/hechizosdom.png">`
+ let creacionH2=document.createElement("h2")
+ creacionH2.classList.add("HarryP")
+ sContainerSectionHechizos.appendChild(creacionDiv)
+ creacionDiv.appendChild(creacionFigure)
+ creacionDiv.appendChild(creacionH2)
+ creacionH2.textContent=hechizos.name
 
+});
+ }
 
+idHechizos()
 
+// portada pociones
+const idPociones = () =>{
+Potions.map((pociones) =>{
+let creacionDiv=document.createElement("div")
+creacionDiv.classList.add("mContenedorPociones")
+let creacionFigure=document.createElement("figure")
+creacionFigure.innerHTML= `<img src="img/pociondom.png">`
+let creacionH2= document.createElement("h2")
+creacionH2.classList.add("HarryP")
+sContainerSectionPosiones.appendChild(creacionDiv)
+creacionDiv.appendChild(creacionFigure)
+creacionDiv.appendChild(creacionH2)
+creacionH2.textContent=pociones.name
 
-
+});
+}
+idPociones()
 
 
 
