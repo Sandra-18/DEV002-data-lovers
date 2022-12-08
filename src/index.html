@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="#">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div id="root" class="sFondo">
@@ -15,7 +17,7 @@
         </div>
         <div class="sTituloPrincipal">
           <h1 class="HarryP">
-            Hogwarts School
+            Hogwarts School 
           </h1>
         </div>
         <div class="sLogoIzquierdo">
@@ -23,13 +25,18 @@
         </div>
       </section>
     </header>
-    <nav class="menu-navegacion" id="menu-navegacion">
+    <div class="contenedor-nav">
+      <nav class="menu-navegacion" id="menu-navegacion">
         <input type="submit" class="sBtnPersonajesNav" id="sBtnLibrosNav" value="Libros">
         <input type="submit" class="sBtnPersonajesNav" id="sBtnPersonajessNav" value="Personajes">
         <input type="submit" class="sBtnPersonajesNav" id="sBtnHechizosNav" value="Hechizos">
         <input type="submit" class="sBtnPersonajesNav" id="sBtnPosionesNav" value="Pociones">
         <input type="submit" class="sBtnPersonajesNav" id="sBtnMenuPrincipalNav" value="Volver al menu Principal">
-    </nav>
+      </nav>
+      <nav class="menuQuery" id="menuQuery">
+        <button><i class="fa-solid fa-bars"></i></button>
+      </nav>
+  </div>
     <main id="sSize" class="sSize">
       <section class="sMagosHechizos" id="sMagosHechizos">
         <div class="sHijoMagosHechizos">
