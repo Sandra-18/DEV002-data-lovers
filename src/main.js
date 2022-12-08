@@ -23,7 +23,8 @@ const sMain_acceso = document.querySelector("#sMagosHechizos"),
       sPersonajesMain_Acceso = document.querySelector("#sPersonajesMain"),
       sHechizosMain_acceso = document.querySelector("#sHechizosMain"),
       sPosionesMain_acceso = document.querySelector("#sPosionesMain"),    
-      nav_acesso = document.querySelector("#menu-navegacion");
+      nav_acesso = document.querySelector("#menu-navegacion"),
+      navMenuQuery = document.querySelector("#menuQuery");
 //seleccionamos el select
 const selecteFilter = document.querySelector("#filtroId");
 //DIV contenedores de tarjetas
@@ -69,7 +70,6 @@ capturaBtnPosiones.addEventListener("click", () =>{
     sLibrosMain_Acceso.classList.remove("sLibrosMainAparecer");
     sPersonajesMain_Acceso.classList.remove("sPersonajesMainAparecer");
     sHechizosMain_acceso.classList.remove("sHechizosMainAparecer");
-    nav_acesso.classList.add("sNavMainAparecer");
 });
 capturaBtnVolver.addEventListener("click", () => {
     sMain_acceso.classList.remove("sMainPrincipal");
@@ -78,29 +78,37 @@ capturaBtnVolver.addEventListener("click", () => {
     sHechizosMain_acceso.classList.remove("sHechizosMainAparecer");
     sPosionesMain_acceso.classList.remove("sPosionesMainAparecer");
     nav_acesso.classList.remove("sNavMainAparecer");
+    navMenuQuery.classList.remove("menuQueryActive");
+    nav_acesso.classList.remove("menu-desplegable")
 });
 //Ejecuciones de Eventos botones imagenes main
 sBtnCaptura_Libros.addEventListener("click", ()=>{
     sLibrosMain_Acceso.classList.add("sLibrosMainAparecer");
     nav_acesso.classList.add("sNavMainAparecer");
-    sMain_acceso.classList.add("sMainPrincipal")
+    navMenuQuery.classList.add("menuQueryActive");
+    sMain_acceso.classList.add("sMainPrincipal");
 });
 sBtnCaptura_Personajes.addEventListener("click", () => {
     sPersonajesMain_Acceso.classList.add("sPersonajesMainAparecer");
     nav_acesso.classList.add("sNavMainAparecer");
+    navMenuQuery.classList.add("menuQueryActive");
     sMain_acceso.classList.add("sMainPrincipal");
 });
 sBtnCaptura_Hechizos.addEventListener("click", () => {
     sHechizosMain_acceso.classList.add("sHechizosMainAparecer");
     nav_acesso.classList.add("sNavMainAparecer");
+    navMenuQuery.classList.add("menuQueryActive");
     sMain_acceso.classList.add("sMainPrincipal");
 });
 sBtnCaptura_Posiones.addEventListener("click", () => {
     sPosionesMain_acceso.classList.add("sPosionesMainAparecer");
     nav_acesso.classList.add("sNavMainAparecer");
+    navMenuQuery.classList.add("menuQueryActive");
     sMain_acceso.classList.add("sMainPrincipal");
 });
-
+navMenuQuery.addEventListener("click", () => {
+    nav_acesso.classList.toggle("menu-desplegable")
+})
 const tarjetasDePersonajes = (tarjeta) => {
     let almacenTarjetas = [];
     
