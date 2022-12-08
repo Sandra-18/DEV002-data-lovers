@@ -7,17 +7,19 @@ import {
   dirtyBlood,
   pureSpecies,
   informacionPotions,
-  informacionHechizos
+  informacionHechizos,
+  buscadorDePersonajes
 
 } from '../src/data.js';
 import data from "../src/data/harrypotter/data.js";
 const characters = data.characters,
       books = data.books,
       potions = data.potions,
-      spells = data.spells;
+      spells = data.spells
+      
 
 //filtramos todos los humanos
-describe('filtro de Humanos', () => {
+describe ('filtro de Humanos', () => {
   it("is a function", () => {
     expect(typeof personajes).toBe("function");
   });
@@ -106,7 +108,70 @@ describe('Filtrar las Pociones', () => {
   });
 });
 
+//Buscador de personajes
+const input= [
+  {
+    name:"Mungo Bonham",
+    gender: "Male",
+    house: null
+  },
+  {
+    name: "Clive Lundquist",
+    gender: "Male",
+    house: "Unknown"
+  },
+  {
+    name: "Connolly",
+    gender: "Male",
+    house: null
+  },
+  {
+    name: "Ritchie Coote",
+    gender: "Male",
+    house: "Gryffindor"
 
+  },
+  {
+    name: "Fang",
+    gender: "Male",
+    house: null
+  },
+  { 
+    name: "Euan Abercrombie",
+    gender: "Male",
+    house: "Gryffindor"
+  },
+  {
+    name: "Edgar Bones",
+    gender: "Male",
+    house: "Hufflepuff (possibly)"
+  }
+
+]
+const buscarNombreDePersonajes=[
+  { 
+    name: "Euan Abercrombie",
+    gender: "Male",
+    house: "Gryffindor"
+  },
+  {
+    name: "Edgar Bones",
+    gender: "Male",
+    house: "Hufflepuff (possibly)"
+  }
+  ]
+
+  
+
+describe('Buscar nombres de personajes',()=>{
+  it("buscadorDePersonajes is a function",() =>{
+    expect(typeof buscadorDePersonajes).toBe("function")
+  });
+  it('Devuelve el nombre del persona a buscar',()=>{
+    expect(buscadorDePersonajes(input,"e")).toEqual(buscarNombreDePersonajes);
+  });
+  
+});
 
 
 

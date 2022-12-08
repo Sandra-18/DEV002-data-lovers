@@ -46,3 +46,8 @@ export const informacionPotions= (potions)=> {
   const almacenHechizos = spells.filter(idHechizos => typeof idHechizos.id === "number" )
   return almacenHechizos;
  }
+//Buscador de personajes
+ export const buscadorDePersonajes=(data,buscarNombreDePersonajes)=>{
+  const allPersonajes= data.filter(personajes => personajes.name.toLowerCase().startsWith(buscarNombreDePersonajes))
+  return allPersonajes;
+ }

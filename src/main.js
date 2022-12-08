@@ -6,7 +6,7 @@ import {
      order_ZA,
      pureSpecies,
      dirtyBlood,
-    
+     buscadorDePersonajes
      
 
      
@@ -17,6 +17,7 @@ const Libros = data.books;
 const Potions = data.potions;
 const spells = data.spells;
 
+
 //seleccionamos las secciones del DOM
 const sMain_acceso = document.querySelector("#sMagosHechizos"),
       sLibrosMain_Acceso = document.querySelector("#sLibrosMain"),
@@ -24,7 +25,8 @@ const sMain_acceso = document.querySelector("#sMagosHechizos"),
       sHechizosMain_acceso = document.querySelector("#sHechizosMain"),
       sPosionesMain_acceso = document.querySelector("#sPosionesMain"),    
       nav_acesso = document.querySelector("#menu-navegacion"),
-      navMenuQuery = document.querySelector("#menuQuery");
+      navMenuQuery = document.querySelector("#menuQuery"),
+      buscadorInput= document.querySelector("#BuscadorDePersonajes");
 //seleccionamos el select
 const selecteFilter = document.querySelector("#filtroId");
 //DIV contenedores de tarjetas
@@ -298,9 +300,15 @@ creacionH2.textContent=pociones.name
 }
 idPociones()
 
-
-
-
+//Buscador input personajes
+buscadorInput.addEventListener("input",(event)=>{
+    sContainerSectionPersonajes.innerHTML=" "
+    let personaBuscar= buscadorDePersonajes(characters,event.target.value)
+    let buscandoNombre=tarjetasDePersonajes(personaBuscar)
+    buscandoNombre.forEach(elemt=>{
+    sContainerSectionPersonajes.appendChild(elemt)
+    })
+})
 
 
 
